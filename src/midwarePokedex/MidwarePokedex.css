@@ -1,0 +1,7 @@
+.MidwarePokedex-container {
+  background-color: #ce3a3a;
+  flex: 1;
+  display: flex;
+
+  padding: 1em;
+}

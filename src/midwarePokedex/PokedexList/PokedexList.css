@@ -1,0 +1,6 @@
+.PokedexList-container {
+  background-color: white;
+  border: 5px solid blue;
+
+  flex: 1;
+}

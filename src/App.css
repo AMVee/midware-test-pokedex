@@ -3,7 +3,18 @@
 
   height: 100vh;
   width: 100vw;
+  display: flex;
 
   box-sizing: border-box;
   overflow: hidden;
+
+  justify-content: center;
+}
+
+.referenceImage {
+  position: fixed;
+  left: 0;
+  height: 100%;
+
+  opacity: 00%;
 }

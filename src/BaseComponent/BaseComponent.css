@@ -1,0 +1,6 @@
+.BaseComponent-container {
+  border: 5px solid green;
+
+  height: 100%;
+  width: 100%;
+}

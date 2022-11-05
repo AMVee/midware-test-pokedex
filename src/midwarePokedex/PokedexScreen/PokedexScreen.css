@@ -1,0 +1,6 @@
+.PokedexScreen-container {
+  border: 5px solid green;
+  background-color: yellow;
+
+  flex: 2;
+}
