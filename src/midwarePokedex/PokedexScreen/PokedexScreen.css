@@ -1,6 +1,9 @@
 .PokedexScreen-container {
-  border: 5px solid green;
-  background-color: yellow;
+  background-color: #ffffff;
+
+  border: 5px solid #eb7575;
+  border-radius: 5px;
 
   flex: 2;
+  margin-left: 1em;
 }
