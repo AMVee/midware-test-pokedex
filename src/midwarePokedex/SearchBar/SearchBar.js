@@ -3,9 +3,11 @@ import "./SearchBar.css";
 import { useState } from "react";
 
 function SearchBar(props) {
-  function handleChange() {
-    props.handleChange();
+  function handleChange(e) {
+    props.handleChange(e.target.value);
   }
+
+  const searchBarValue = props.searchBarValue;
 
   return (
     <div className="SearchBar-container">
@@ -13,7 +15,7 @@ function SearchBar(props) {
         type="text"
         name="name"
         className="searchbar"
-        value={props.searchBarValue}
+        value={searchBarValue}
         onChange={handleChange}
       />
     </div>
