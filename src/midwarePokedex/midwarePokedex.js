@@ -2,6 +2,8 @@ import "./MidwarePokedex.css";
 
 import PokedexList from "./PokedexList/PokedexList";
 import PokedexScreen from "./PokedexScreen/PokedexScreen";
+import SearchBar from "./SearchBar/SearchBar";
+
 import { useState, useEffect } from "react";
 
 import axios from "axios";
@@ -28,6 +30,7 @@ function MidwarePokedex() {
 
   return (
     <div className="MidwarePokedex-container">
+      <SearchBar />
       <PokedexList
         selectedPokemon={selectedPokemon}
         handleClick={handleEntryClick}

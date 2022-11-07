@@ -1,0 +1,11 @@
+.SearchBar-container {
+  border: 5px solid green;
+
+  height: 2em;
+  width: 20em;
+
+  position: absolute;
+
+  top: 2em;
+  right: 2em;
+}
