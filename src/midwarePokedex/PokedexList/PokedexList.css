@@ -24,7 +24,9 @@
 
 ::-webkit-scrollbar-thumb {
   background: #e34040;
-  border-radius: 15px;
+
+  border-top-right-radius: 9px;
+  border-bottom-right-radius: 9px;
   cursor: pointer;
 }
 
