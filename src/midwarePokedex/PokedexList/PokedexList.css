@@ -10,3 +10,28 @@
 
   padding: 0;
 }
+
+::-webkit-scrollbar {
+  width: 1em;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-track {
+  background: #b13333;
+  border-top-right-radius: 9px;
+  border-bottom-right-radius: 9px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e34040;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb :hover {
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ce4040;
+}
