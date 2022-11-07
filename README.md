@@ -1,4 +1,4 @@
-### Midware-Pokedex
+# Midware-Pokedex
 
 This file explains the use of this create-react-app web application. Because of this, more detailed documentation can be found in the [CRA Documentation](https://create-react-app.dev/docs/getting-started). Here are also added some details about how things are handled behind the scenes, serving as an informal but convinient guide to the project.
 
