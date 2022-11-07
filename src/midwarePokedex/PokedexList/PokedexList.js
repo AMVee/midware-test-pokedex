@@ -7,6 +7,21 @@ import PokemonListEntry from "./PokemonListEntry/PokemonListEntry";
 
 function PokedexList(props) {
   const [listOfPokemon, setListOfPokemon] = useState("");
+  const [batchNumber, setBatchNumber] = useState(1);
+
+  function startNextBatch() {
+    setBatchNumber(batchNumber + 1);
+    console.log("starting batch " + batchNumber);
+  }
+
+  useEffect(() => {
+    if (batchNumber <= 3) {
+      let currentInterval = setInterval(startNextBatch, 2000);
+      return () => {
+        clearInterval(currentInterval);
+      };
+    }
+  }, [batchNumber]);
 
   function handleClick(pokeNum) {
     props.handleClick(pokeNum);
@@ -26,12 +41,13 @@ function PokedexList(props) {
                 pokeNum={index + 1}
                 handleClick={handleClick}
                 searchBarValue={props.searchBarValue}
+                batchNumber={batchNumber}
               />
             );
           })
         );
       });
-  }, [props.selectedPokemon, props.searchBarValue]);
+  }, [props.selectedPokemon, props.searchBarValue, batchNumber]);
 
   return <div className="PokedexList-container">{listOfPokemon}</div>;
 }

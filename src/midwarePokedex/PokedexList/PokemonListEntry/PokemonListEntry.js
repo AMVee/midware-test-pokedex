@@ -15,8 +15,6 @@ function PokemonListEntry(props) {
 
   let thisEntryContainerClassname = "PokemonListEntry-container ";
 
-  let inlineStyle = {};
-
   if (props.selectedPokemon.name == props.pokemon.name) {
     thisEntryContainerClassname += " SelectedEntry";
   }
@@ -25,15 +23,17 @@ function PokemonListEntry(props) {
   } else {
     thisEntryContainerClassname += " NotVisible";
   }
-
-  let iconURL =
-    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/" +
-    props.pokeNum +
-    ".png";
+  let iconURL = "";
+  if (props.pokeNum <= 30 * props.batchNumber ** props.batchNumber) {
+    iconURL =
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/" +
+      props.pokeNum +
+      ".png";
+  }
 
   return (
     <div className={thisEntryContainerClassname} onClick={handleClick}>
-      <img className="PokemonListEntry-Icon" src={iconURL} />
+      {<img className="PokemonListEntry-Icon" src={iconURL} />}
 
       <p className="PokemonListEntry-Name">
         {capitalizeFirstLetter(props.pokemon.name)}
