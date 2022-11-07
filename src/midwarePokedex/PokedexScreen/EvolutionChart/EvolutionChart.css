@@ -1,0 +1,7 @@
+.EvolutionChart-container {
+  border-top: 5px solid #e34343;
+
+  width: 90%;
+
+  flex: 3;
+}

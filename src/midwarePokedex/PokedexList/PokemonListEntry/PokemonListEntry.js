@@ -1,14 +1,14 @@
 import "./PokemonListEntry.css";
 
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+function addLeadingZeros(num) {
+  return String(num).padStart(3, "0");
+}
+
 function PokemonListEntry(props) {
-  function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  }
-
-  function addLeadingZeros(num) {
-    return String(num).padStart(3, "0");
-  }
-
   function handleClick() {
     props.handleClick(props.pokeNum);
   }

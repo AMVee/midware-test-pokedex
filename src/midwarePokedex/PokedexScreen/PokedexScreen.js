@@ -1,4 +1,6 @@
+import EvolutionChart from "./EvolutionChart/EvolutionChart";
 import "./PokedexScreen.css";
+import PokemonDisplay from "./PokemonDisplay/PokemonDisplay";
 
 function PokedexScreen(props) {
   let pokemonImageURL;
@@ -11,7 +13,8 @@ function PokedexScreen(props) {
 
   return (
     <div className="PokedexScreen-container">
-      <img src={pokemonImageURL} />
+      <PokemonDisplay selectedPokemon={props.selectedPokemon} />
+      <EvolutionChart selectedPokemon={props.selectedPokemon} />
     </div>
   );
 }

@@ -1,0 +1,30 @@
+.LeftSide-container {
+  border: 2px solid blue;
+
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  height: 100%;
+}
+
+.LeftSide-Image {
+  height: 40%;
+}
+
+.LeftSide-Name {
+  font-weight: bold;
+}
+.LeftSide-Types {
+  display: flex;
+  border: 2px red solid;
+  width: 50%;
+}
+
+.Type {
+  border: 2px green solid;
+  width: 5em;
+}

@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 function MidwarePokedex() {
-  const [selectedPokemon, setSelectedPokemon] = useState("loading");
+  const [selectedPokemon, setSelectedPokemon] = useState("");
 
   function handleEntryClick(newPokemonID) {
     let newPokemonURL = "https://pokeapi.co/api/v2/pokemon/" + newPokemonID;
@@ -23,6 +23,7 @@ function MidwarePokedex() {
       .then((response) => {
         setSelectedPokemon(response.data);
       });
+    console.log("initialized in bulbasaur");
   }, []);
 
   return (
@@ -31,7 +32,11 @@ function MidwarePokedex() {
         selectedPokemon={selectedPokemon}
         handleClick={handleEntryClick}
       />
-      <PokedexScreen selectedPokemon={selectedPokemon} />
+      {selectedPokemon ? (
+        <PokedexScreen selectedPokemon={selectedPokemon} />
+      ) : (
+        "loading"
+      )}
     </div>
   );
 }
