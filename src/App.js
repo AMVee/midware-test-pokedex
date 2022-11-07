@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 
 import Ref1 from "./ReferenceImages/Ref1.png";
@@ -9,7 +8,7 @@ import MidwarePokedex from "./MidwarePokedex/MidwarePokedex";
 function App() {
   return (
     <div className="App">
-      <img className="referenceImage" src={Ref1} />
+      {/* <img className="referenceImage" src={Ref1} /> */}
 
       <MidwarePokedex />
     </div>

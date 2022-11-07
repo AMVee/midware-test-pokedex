@@ -9,15 +9,28 @@ import axios from "axios";
 function MidwarePokedex() {
   const [selectedPokemon, setSelectedPokemon] = useState("loading");
 
+  function handleEntryClick(newPokemonID) {
+    let newPokemonURL = "https://pokeapi.co/api/v2/pokemon/" + newPokemonID;
+
+    axios
+      .get(newPokemonURL)
+      .then((response) => setSelectedPokemon(response.data));
+  }
+
   useEffect(() => {
     axios
-      .get("https://pokeapi.co/api/v2/pokemon/vulpix")
-      .then((response) => setSelectedPokemon(response.data));
+      .get("https://pokeapi.co/api/v2/pokemon/bulbasaur")
+      .then((response) => {
+        setSelectedPokemon(response.data);
+      });
   }, []);
 
   return (
     <div className="MidwarePokedex-container">
-      <PokedexList selectedPokemon={selectedPokemon} />
+      <PokedexList
+        selectedPokemon={selectedPokemon}
+        handleClick={handleEntryClick}
+      />
       <PokedexScreen selectedPokemon={selectedPokemon} />
     </div>
   );

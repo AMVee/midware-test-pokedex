@@ -1,10 +1,13 @@
 import "./PokedexScreen.css";
 
 function PokedexScreen(props) {
-  const pokemonImageURL =
-    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/" +
-    props.selectedPokemon.id +
-    ".png";
+  let pokemonImageURL;
+  if (props.selectedPokemon.id) {
+    pokemonImageURL =
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/" +
+      props.selectedPokemon.id +
+      ".png";
+  }
 
   return (
     <div className="PokedexScreen-container">
