@@ -22,7 +22,6 @@ function PokemonListEntry(props) {
   }
 
   if (props.pokemon.name.includes(props.searchBarValue.toLowerCase())) {
-    console.log(props.searchBarValue + " is inside " + props.pokemon.name);
   } else {
     thisEntryContainerClassname += " NotVisible";
   }
