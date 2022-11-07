@@ -1,7 +1,4 @@
 .SearchBar-container {
-  border: 2px solid green;
-  border-radius: 5px;
-
   height: 2em;
   width: 20em;
 
@@ -11,4 +8,33 @@
   right: 2em;
 
   display: flex;
+
+  justify-content: right;
+}
+.SearchBarInvisible {
+  width: 0;
+}
+
+.SearchBar-Box {
+  visibility: visible;
+  width: 100%;
+  transition: 0.5s;
+}
+
+.BarInvisible {
+  visibility: collapse;
+  width: 0;
+}
+
+.SearchBar-Icon {
+  cursor: pointer;
+  border-radius: 5px;
+
+  background-color: #f9e6e6;
+}
+
+.SearchBarIconCollapsed {
+  cursor: pointer;
+
+  background-color: #f9e6e6;
 }
