@@ -2,6 +2,5 @@
   width: 100%;
 
   display: flex;
-
-  border: 5px green solid;
+  flex: 3;
 }

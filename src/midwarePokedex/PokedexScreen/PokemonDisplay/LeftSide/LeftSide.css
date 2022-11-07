@@ -1,6 +1,4 @@
 .LeftSide-container {
-  border: 2px solid blue;
-
   flex: 1;
 
   display: flex;
@@ -12,19 +10,23 @@
 }
 
 .LeftSide-Image {
-  height: 40%;
+  max-width: 50%;
 }
 
 .LeftSide-Name {
   font-weight: bold;
+  font-size: 1.5em;
 }
 .LeftSide-Types {
   display: flex;
-  border: 2px red solid;
-  width: 50%;
+  width: 75%;
+
+  justify-content: space-around;
 }
 
 .Type {
-  border: 2px green solid;
-  width: 5em;
+  background-color: #f9e6e6;
+  border-radius: 5px;
+
+  width: 8em;
 }
