@@ -3,6 +3,8 @@ import "./EvolutionChart.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+import RedArrowIcon from "./assets/RedArrowIcon.png";
+
 function extractIDfromURL(URL) {
   let ID = URL.split("pokemon-species")[1];
 
@@ -25,16 +27,16 @@ function EvolutionChart(props) {
         let newEvolutionChain = [];
         newEvolutionChain.push(extractIDfromURL(chain.species.url));
 
-        if (chain.evolves_to) {
+        if (chain.evolves_to[0]) {
           newEvolutionChain.push(
             extractIDfromURL(chain.evolves_to[0].species.url)
           );
-        }
 
-        if (chain.evolves_to[0].evolves_to[0]) {
-          newEvolutionChain.push(
-            extractIDfromURL(chain.evolves_to[0].evolves_to[0].species.url)
-          );
+          if (chain.evolves_to[0].evolves_to[0]) {
+            newEvolutionChain.push(
+              extractIDfromURL(chain.evolves_to[0].evolves_to[0].species.url)
+            );
+          }
         }
 
         setEvolutionChainIDs(newEvolutionChain);
@@ -42,11 +44,21 @@ function EvolutionChart(props) {
     });
   }, [props.selectedPokemon]);
 
-  const chartImages = evolutionChainIDs.map((id) => {
+  const chart = evolutionChainIDs.map((id) => {
     return <img className="ChartImage" src={imageURLFromID(id)} key={id} />;
   });
 
-  return <div className="EvolutionChart-container">{chartImages}</div>;
+  if (evolutionChainIDs.length > 1) {
+    const redArrowIcon = <img className="arrow" src={RedArrowIcon} key={111} />;
+    chart.splice(1, 0, redArrowIcon);
+  }
+
+  if (evolutionChainIDs.length > 2) {
+    const redArrowIcon = <img className="arrow" src={RedArrowIcon} key={222} />;
+    chart.splice(3, 0, redArrowIcon);
+  }
+
+  return <div className="EvolutionChart-container">{chart}</div>;
 }
 
 export default EvolutionChart;

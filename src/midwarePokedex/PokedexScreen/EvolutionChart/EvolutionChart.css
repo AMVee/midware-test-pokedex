@@ -5,9 +5,19 @@
 
   display: flex;
 
+  justify-content: center;
+  align-items: center;
   flex: 2;
 }
 
 .ChartImage {
-  max-width: 20%;
+  flex: 1;
+  max-width: 10em;
+  max-height: 10em;
+  margin: 1em;
+}
+
+.arrow {
+  transform: rotateZ(90deg);
+  width: 3em;
 }
