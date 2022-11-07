@@ -10,6 +10,7 @@ import axios from "axios";
 
 function MidwarePokedex() {
   const [selectedPokemon, setSelectedPokemon] = useState("");
+  const [searchBarValue, setSearchBarValue] = useState("");
 
   function handleEntryClick(newPokemonID) {
     let newPokemonURL = "https://pokeapi.co/api/v2/pokemon/" + newPokemonID;
@@ -19,21 +20,25 @@ function MidwarePokedex() {
       .then((response) => setSelectedPokemon(response.data));
   }
 
+  function handleSearchBarChange(newValue) {
+    setSearchBarValue(newValue);
+  }
+
   useEffect(() => {
     axios
       .get("https://pokeapi.co/api/v2/pokemon/bulbasaur")
       .then((response) => {
         setSelectedPokemon(response.data);
       });
-    console.log("initialized in bulbasaur");
   }, []);
 
   return (
     <div className="MidwarePokedex-container">
-      <SearchBar />
+      <SearchBar handleChange={handleSearchBarChange} />
       <PokedexList
         selectedPokemon={selectedPokemon}
         handleClick={handleEntryClick}
+        searchBarValue={searchBarValue}
       />
       {selectedPokemon ? (
         <PokedexScreen selectedPokemon={selectedPokemon} />

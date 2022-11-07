@@ -12,6 +12,10 @@
   background-color: #700808;
 }
 
+.NotVisible {
+  display: none;
+}
+
 .PokemonListEntry-Icon {
   color: #ffffff;
   flex: 1;

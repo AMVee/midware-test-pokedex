@@ -13,18 +13,31 @@ function PokemonListEntry(props) {
     props.handleClick(props.pokeNum);
   }
 
-  let thisEntryContainerClassname = "PokemonListEntry-container";
+  let thisEntryContainerClassname = "PokemonListEntry-container ";
+
+  let inlineStyle = {};
 
   if (props.selectedPokemon.name == props.pokemon.name) {
     thisEntryContainerClassname += " SelectedEntry";
+  }
+
+  if (props.pokemon.name.includes(props.searchBarValue.toLowerCase())) {
+    console.log(props.searchBarValue + " is inside " + props.pokemon.name);
+  } else {
+    inlineStyle.display = "none";
   }
 
   let iconURL =
     "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/" +
     props.pokeNum +
     ".png";
+
   return (
-    <div className={thisEntryContainerClassname} onClick={handleClick}>
+    <div
+      className={thisEntryContainerClassname}
+      onClick={handleClick}
+      style={inlineStyle}
+    >
       <img className="PokemonListEntry-Icon" src={iconURL} />
 
       <p className="PokemonListEntry-Name">

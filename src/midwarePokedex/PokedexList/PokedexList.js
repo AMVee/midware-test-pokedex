@@ -25,12 +25,13 @@ function PokedexList(props) {
                 selectedPokemon={props.selectedPokemon}
                 pokeNum={index + 1}
                 handleClick={handleClick}
+                searchBarValue={props.searchBarValue}
               />
             );
           })
         );
       });
-  }, [props.selectedPokemon]);
+  }, [props.selectedPokemon, props.searchBarValue]);
 
   return <div className="PokedexList-container">{listOfPokemon}</div>;
 }
