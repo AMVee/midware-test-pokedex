@@ -1,5 +1,6 @@
 .SearchBar-container {
-  border: 5px solid green;
+  border: 2px solid green;
+  border-radius: 5px;
 
   height: 2em;
   width: 20em;
@@ -8,4 +9,6 @@
 
   top: 2em;
   right: 2em;
+
+  display: flex;
 }
