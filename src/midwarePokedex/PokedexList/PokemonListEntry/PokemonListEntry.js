@@ -24,7 +24,7 @@ function PokemonListEntry(props) {
   if (props.pokemon.name.includes(props.searchBarValue.toLowerCase())) {
     console.log(props.searchBarValue + " is inside " + props.pokemon.name);
   } else {
-    inlineStyle.display = "none";
+    thisEntryContainerClassname += " NotVisible";
   }
 
   let iconURL =
@@ -33,11 +33,7 @@ function PokemonListEntry(props) {
     ".png";
 
   return (
-    <div
-      className={thisEntryContainerClassname}
-      onClick={handleClick}
-      style={inlineStyle}
-    >
+    <div className={thisEntryContainerClassname} onClick={handleClick}>
       <img className="PokemonListEntry-Icon" src={iconURL} />
 
       <p className="PokemonListEntry-Name">
