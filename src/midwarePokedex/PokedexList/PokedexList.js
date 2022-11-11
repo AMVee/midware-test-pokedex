@@ -11,7 +11,6 @@ function PokedexList(props) {
 
   function startNextBatch() {
     setBatchNumber(batchNumber + 1);
-    console.log("starting batch " + batchNumber);
   }
 
   useEffect(() => {
