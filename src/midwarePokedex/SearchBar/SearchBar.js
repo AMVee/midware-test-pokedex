@@ -1,17 +1,24 @@
 import "./SearchBar.css";
 import searchIcon from "./assets/searchIcon.png";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 function SearchBar(props) {
   const [showBar, setShowBar] = useState(false);
+
+  const theSearchBox = useRef(null);
 
   function handleChange(e) {
     props.handleChange(e.target.value);
   }
 
   function handleIconClick() {
-    setShowBar(!showBar);
+    setShowBar((currentShowBar) => {
+      if (!currentShowBar) {
+        theSearchBox.current.focus();
+      }
+      return !currentShowBar;
+    });
   }
 
   const searchBarValue = props.searchBarValue;
@@ -21,24 +28,21 @@ function SearchBar(props) {
     SearchBarBoxClassName += " BarInvisible";
   }
 
-  let SearchBarIconClassName = "SearchBar-Icon";
-  if (!showBar) {
-    SearchBarBoxClassName += " SearchBarIconCollapsed";
-  }
-
   return (
     <div className="SearchBar-container">
       <img
         src={searchIcon}
-        className={SearchBarIconClassName}
+        className="SearchBar-Icon"
         onClick={handleIconClick}
+        title="search"
       />
       <input
         type="text"
-        name="name"
+        name="searchBox"
         value={searchBarValue}
         onChange={handleChange}
         className={SearchBarBoxClassName}
+        ref={theSearchBox}
       />
     </div>
   );
