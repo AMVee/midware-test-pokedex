@@ -46,7 +46,7 @@ function RightSide(props) {
       </p>
       <p className="RightSide-Height RightSide-Stat">
         <b>Height:</b>
-        {" " + props.selectedPokemon.height * 10} m
+        {" " + props.selectedPokemon.height * 10} cm
       </p>
 
       <p className="RightSide-EggGroups RightSide-Stat">
